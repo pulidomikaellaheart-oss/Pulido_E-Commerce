@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+    color: rgb(65, 92, 74);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 500%;
+    height: 100%;
+    background: rgba(12, 12, 12, 0.55);
+    
+}
+
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    padding: 10px, 5px;
+    background: rgba(153, 178, 171, 0.5);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(144, 250, 134, 0.607);
+    border: 3px solid rgba(7, 213, 52, 0.838);
+     animation: animateBg 5s linear infinite;
+}
+
+@keyframes animateBg {
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+.store-name {
+    background-color: rgba(153, 178, 171, 0.5);
+    font-size: 40px;
+    font-weight: 1000;
+    color: #06eb7c;
+    text-shadow: 0 0 30px rgba(0, 19, 10, 0.6);
+    border: 1px solid rgba(7, 213, 52, 0.838);
+    box-shadow: 0 0 30px rgba(144, 250, 134, 0.607);
+}
+
+.menu-group {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+}
+
+.group-title {
+    color: #53d788;
+    font-size: 18px;
+    font-weight: 800;
+    text-shadow: 0 0 8px rgb(10, 10, 10);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 20px 4px;
+    margin-top: 4px;
+}
+
+.menu-item {
+    color: rgb(1, 79, 40);
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 800;
+    margin: 2px 12px;
+    border-radius: 4px;
+    transition: all 0.10s ease;
+}
+
+
+.sidebar .active {
+    background-color: #ebeee8;
+    font-weight: bold;
+    border-left: 10px solid rgb(49, 89, 67);
+}
+
+.menu-item.logout {
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.menu-item.logout:hover {
+    background-color: #6fc479;
+}
+
+.main-content {
+    flex: 10;
+    margin-left: 300px;
+    padding: 40px;
+    background-color: rgba(153, 178, 171, 0.5);
+}
+
+.main-content h1 {
+    color: #0e0e0e;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family:chery;
+}
+
+.main-content p {
+    color: #0d0d0d;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

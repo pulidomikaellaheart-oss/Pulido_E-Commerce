@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-size: cover;
+    background-position: center right;
+    color: rgb(65, 92, 74);
+    animation: animateBg 5s linear infinite;
+}
+
+@keyframes animateBg {
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 12, 12, 0.55);
+    z-index: 0;
+}
+
+.navbar, .container {
+    position: relative;
+    z-index: 1;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 9999;
+}
+.nav-left a {
+    color: rgb(212, 245, 202);
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 20px;
+    font-weight: 700; 
+    pointer-events: auto;
+    position: relative;
+    z-index: 20000;
+    display: inline-block;
+    transition: all 0.5s ease;
+}
+.nav-left a.active {
+    border-bottom: 2px solid rgb(212, 245, 202);
+    padding-bottom: 4px;
+    color: #b6f2d5;
+    text-shadow: 0 0 8px rgba(6,235,124,0.7);
+}
+
+@keyframes bounceClick{
+    0% {transform: scale(1);}
+    25% {transform: scale(0.55);}
+    50% {transform: scale(1.15);}
+    75% {transform: scale(0.50);}
+    100% {transform: scale(1);}
+}
+.nav-left a:hover {
+    color: #85f3c5;
+    transform: translateY(-2px);  
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    border: 5px solid rgba(7, 242, 50, 0.4);
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+.search input {
+    background: transparent;
+    border: none;
+    color: rgb(208, 241, 206);
+    outline: none;
+    font-weight: 700; 
+}
+.search input::placeholder {
+    color: rgb(212, 245, 202);
+    font-size: 20px;
+    font-weight: 700; 
+}
+.search button {
+    background: transparent;
+    border: none;
+    color:rgb(212, 245, 202);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 130px;
+    padding-left: 38%;
+}
+
+.login-box {
+    background: rgba(153, 178, 171, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid rgba(7, 213, 52, 0.838);
+    box-shadow: 0 0 30px rgba(144, 250, 134, 0.607);
+}
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 800;
+    color: #06eb7c;
+    text-shadow: 0 0 8px rgba(0, 19, 10, 0.6);
+}
+
+.input-group {
+    margin-bottom: 22px;
+}
+.input-group label {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: 18px;
+    color: #06eb7c;
+    text-shadow: black;
+    font-weight: 500; 
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.5s;
+    display: inline-block;
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 15px;
+    margin-top: 3px;
+    min-height: 14px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 16px;
+    color:#06eb7c;
+}
+
+.forgot {
+    color: #06eb7c;
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.forgot:hover {
+    color: #06eb7c;
+}
+
+.forgot:active, .bottom a:active{
+    animation: bounceClick 0.5s ease;
+}
+
+.btn {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(90deg, #07f389, #85f3c5);
+    color: rgb(5, 36, 7);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(239,68,68,0.3);
+}
+
+.btn:active{
+    animation: bounceClick 0.35s ease;
+}
+
+.bottom {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 16px;
+    color: #b6f2d5;
+}
+
+.bottom a {
+    color: #3bcd86;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.bottom a:hover{
+    text-shadow: 0 0 6px;
+}
+
+.bottom a:active{
+    animation: bounceClick 0.35sease;
+}
