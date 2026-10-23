@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEARTIE — Seller Dashboard</title>
+    <link rel="stylesheet" href="side-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="sidebar" id="sidebar">
+        <div class="store-name">SELLER HUB</div>
+        <button class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">
+            <i class="fas fa-chevron-left" id="toggleIcon"></i>
+        </button>
+
+        <div class="menu-group">
+            <div class="group-title">SELLER MENU</div>
+            <a href="#" class="menu-item active" id="menu-dashboard" onclick="showSection('dashboard'); setActive(this); return false;">
+                <i class="fas fa-chart-line"></i><span class="menu-text">Dashboard</span>
+            </a>
+            <a href="#" class="menu-item" id="menu-manage" onclick="showSection('manage'); setActive(this); return false;">
+                <i class="fas fa-boxes"></i><span class="menu-text">Manage Products</span>
+            </a>
+            <a href="#" class="menu-item" id="menu-addprod" onclick="showSection('addprod'); setActive(this); return false;">
+                <i class="fas fa-plus-circle"></i><span class="menu-text">Add Product</span>
+            </a>
+            <a href="#" class="menu-item" id="menu-orders" onclick="showSection('orders'); setActive(this); return false;">
+                <i class="fas fa-clipboard-list"></i><span class="menu-text">Customer Orders</span>
+            </a>
+            <a href="#" class="menu-item" id="menu-profile" onclick="showSection('profile'); setActive(this); return false;">
+                <i class="fas fa-user-shield"></i><span class="menu-text">Seller Profile</span>
+            </a>
+        </div>
+
+        <div class="menu-group">
+            <div class="group-title">SYSTEM</div>
+            <a href="index.html" class="menu-item logout">
+                <i class="fas fa-sign-out-alt"></i><span class="menu-text">Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        
+        <section id="dashboard" class="content-section active">
+            <h1>Seller Dashboard 📊</h1>
+            <p>Welcome back, Seller! Here is your business overview.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Total Products</h3>
+                    <p class="price">6 Items</p>
+                </div>
+                <div class="card">
+                    <h3>Total Orders</h3>
+                    <p class="price">3 Orders</p>
+                </div>
+                <div class="card">
+                    <h3>Sales Summary</h3>
+                    <p class="price">₱180.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="manage" class="content-section">
+            <h1>Manage Products 📦</h1>
+            <p>View, edit, or delete store inventory.</p>
+            <div class="product-card">
+                <div class="card-row">
+                    <div class="card-body">
+                        <h3>Flower Beaded Bracelet 🌸</h3>
+                        <p>Category: Bracelets | Price: ₱45.00 | Stock: 15</p>
+                        <button class="add-btn" style="background: #ffb703;">✏️ Edit</button>
+                        <button class="remove-btn">🗑️ Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="addprod" class="content-section">
+            <h1>Add New Product ➕</h1>
+            <p>Fill out the details to list a new item.</p>
+            <div class="settings-card">
+                <div class="input-group"><label>Product Name</label><input type="text" placeholder="Enter product name"></div>
+                <div class="input-group"><label>Price (₱)</label><input type="number" placeholder="Enter price"></div>
+                <div class="input-group"><label>Category</label><input type="text" placeholder="Enter category"></div>
+                <div class="input-group"><label>Stock / Quantity</label><input type="number" placeholder="Enter stock quantity"></div>
+                <button class="btn-primary" onclick="alert('Product added successfully!')">Save Product</button>
+            </div>
+        </section>
+
+        <section id="orders" class="content-section">
+            <h1>Customer Orders 📋</h1>
+            <p>Track orders placed by users.</p>
+            <div class="order-card">
+                <div class="card-body">
+                    <h3>Order #0001</h3>
+                    <p>Product: Flower Beaded Bracelet × 1</p>
+                    <p class="order-meta">Status: <span class="badge badge-green">Delivered</span></p>
+                    <p class="price">Total: ₱45.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile" class="content-section">
+            <h1>Seller Profile 👤</h1>
+            <div class="profile-card">
+                <div class="profile-info">
+                    <div class="info-row"><strong>Seller Name:</strong> <span>Mikaella Heart Pulido</span></div>
+                    <div class="info-row"><strong>Store Name:</strong> <span>HEARTIE Beaded Accessories</span></div>
+                    <div class="info-row"><strong>Email:</strong> <span>seller@example.com</span>[cite: 8]</div>
+                    <div class="info-row"><strong>Contact:</strong> <span>+63 910-688-3273</span></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script src="side-menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEARTIE — Beaded Accessories</title>
+    <link rel="stylesheet" href="side-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="sidebar" id="sidebar">
+        
+        <div class="store-name">HEARTIE</div>
+
+        <button class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">
+            <i class="fas fa-chevron-left" id="toggleIcon"></i>
+        </button>
+
+        <div class="menu-group">
+            <div class="group-title">MAIN NAVIGATION</div>
+            <a href="#" class="menu-item active" id="menu-home" onclick="showPage('home'); setActiveNav(this); return false;">
+                <i class="fas fa-home"></i><span class="menu-text">Home</span>
+            </a>
+            <a href="#" class="menu-item" id="menu-products" onclick="showPage('products'); setActiveNav(this); return false;">
+                <i class="fas fa-box"></i><span class="menu-text">Products</span>
+            </a>
+            <a href="#" class="menu-item" id="menu-categories" onclick="showPage('categories'); setActiveNav(this); return false;">
+                <i class="fas fa-th-large"></i><span class="menu-text">Categories</span>
+            </a>
+        </div>
+
+        <div class="menu-group">
+            <div class="group-title">SHOPPING</div>
+            <a href="#" class="menu-item" id="menu-cart" onclick="showPage('cart'); setActiveNav(this); return false;">
+                <i class="fas fa-shopping-cart"></i><span class="menu-text">Cart <span id="cart-badge" style="background:#06eb7c; color:#000; padding:1px 6px; border-radius:50%; font-size:11px;">0</span></span>
+            </a>
+            <a href="#" class="menu-item" id="menu-orders" onclick="showPage('orders'); setActiveNav(this); return false;">
+                <i class="fas fa-clipboard-list"></i><span class="menu-text">My Orders <span id="orders-badge" style="background:#06eb7c; color:#000; padding:1px 6px; border-radius:50%; font-size:11px;">0</span></span>
+            </a>
+            <a href="#" class="menu-item" id="menu-wishlist" onclick="showPage('wishlist'); setActiveNav(this); return false;">
+                <i class="fas fa-heart"></i><span class="menu-text">Wishlist <span id="wishlist-badge" style="background:#06eb7c; color:#000; padding:1px 6px; border-radius:50%; font-size:11px;">0</span></span>
+            </a>
+        </div>
+
+        <div class="menu-group">
+            <div class="group-title">ACCOUNT</div>
+            <a href="#" class="menu-item" id="menu-profile" onclick="showPage('profile'); setActiveNav(this); return false;">
+                <i class="fas fa-user"></i><span class="menu-text">Profile</span>
+            </a>
+            <a href="#" class="menu-item" id="menu-settings" onclick="showPage('settings'); setActiveNav(this); return false;">
+                <i class="fas fa-cog"></i><span class="menu-text">Settings</span>
+            </a>
+        </div>
+
+        <div class="menu-group">
+            <div class="group-title">SYSTEM</div>
+            <a href="#" class="menu-item logout" id="menu-logout">
+                <i class="fas fa-sign-out-alt"></i><span class="menu-text">Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        
+        <section id="home" class="content-section active">
+            <div class="home-header">
+                <h1>Welcome to HEARTIE! 💙</h1>
+                <p class="home-subtitle">Handmade beaded accessories — made with love, one bead at a time! ✨</p>
+                <p class="home-desc">
+                    We craft lovely bracelets, keychains, and charms from high-quality beads. Simple, stylish, and made just for you — perfect for everyday, gifts, or matching sets. 💜
+                </p>
+            </div>
+
+            <div class="home-features-row">
+                <div class="feature-card">
+                    <img src="Buque flowers.jpg" alt="New Arrivals" class="card-img">
+                    <div class="card-body">
+                        <h3>🌸 New Arrivals</h3>
+                        <p>Fresh designs just dropped! See our newest bracelets, keychains, and charms — all handmade with love.</p>
+                        <span class="badge badge-green">Fresh & Handmade</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <img src="Buy One.jpg" alt="Promotions" class="card-img">
+                    <div class="card-body">
+                        <h3>🎁 Promotions</h3>
+                        <p>Great deals waiting for you! Buy 1 Take 1 and more — don’t miss out on our limited-time offers.</p>
+                        <span class="badge badge-yellow">Limited Time Only</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <img src="Best.jpg" alt="Best Sellers" class="card-img">
+                    <div class="card-body">
+                        <h3>💖 Best Sellers</h3>
+                        <p>Customer favorites! Our most-loved pieces everyone keeps coming back for — you’ll love them too.</p>
+                        <span class="badge badge-lightgreen">Customer Favorite</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="content-section">
+            <h1>Our Beaded Collection 🫶</h1>
+            <p>Handmade with love — each piece is uniquely yours! ✨</p>
+            
+            <div class="product-card">
+                <div class="card-row">
+                    <img src="Flower Beaded Bracelet.jpg" alt="Flower Beaded Bracelet" class="card-img">
+                    <div class="card-body">
+                        <h3>Flower Beaded Bracelet 🌸</h3>
+                        <p>Colorful daisy beads — stretchy & comfortable!</p>
+                        <p class="price">₱45.00</p>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="add-btn" onclick="addToCart('Flower Beaded Bracelet', 45, 'Flower Beaded Bracelet.jpg')">🛒 Add to Cart</button>
+                            <button class="wish-btn" onclick="addToWishlist('Flower Beaded Bracelet', 45, 'Colorful daisy beads — stretchy & comfortable!', 'Flower Beaded Bracelet.jpg')" style="background: #ff4d6d; color: #fff; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">❤️ Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-row">
+                    <img src="Heart Beaded Bracelet.jpg" alt="Heart Beaded Bracelet" class="card-img">
+                    <div class="card-body">
+                        <h3>Heart Beaded Bracelet 💜</h3>
+                        <p>Purple heart beads — simple & everyday perfect!</p>
+                        <p class="price">₱40.00</p>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="add-btn" onclick="addToCart('Heart Beaded Bracelet', 40, 'Heart Beaded Bracelet.jpg')">🛒 Add to Cart</button>
+                            <button class="wish-btn" onclick="addToWishlist('Heart Beaded Bracelet', 40, 'Purple heart beads — simple & everyday perfect!', 'Heart Beaded Bracelet.jpg')" style="background: #ff4d6d; color: #fff; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">❤️ Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-row">
+                    <img src="Custom Name Keychain.jpg" alt="Custom Name Keychain" class="card-img">
+                    <div class="card-body">
+                        <h3>Custom Name Keychain 🔑</h3>
+                        <p>Personalized beaded keychain — any name you want!</p>
+                        <p class="price">₱55.00</p>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="add-btn" onclick="addToCart('Custom Name Keychain', 55, 'Custom Name Keychain.jpg')">🛒 Add to Cart</button>
+                            <button class="wish-btn" onclick="addToWishlist('Custom Name Keychain', 55, 'Personalized beaded keychain — any name you want!', 'Custom Name Keychain.jpg')" style="background: #ff4d6d; color: #fff; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">❤️ Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-row">
+                    <img src="Beaded Phone Charm.jpg" alt="Beaded Phone Charm" class="card-img">
+                    <div class="card-body">
+                        <h3>Beaded Phone Charm 📱</h3>
+                        <p>Pastel beaded wrist strap — secure & cute!</p>
+                        <p class="price">₱50.00</p>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="add-btn" onclick="addToCart('Beaded Phone Charm', 50, 'Beaded Phone Charm.jpg')">🛒 Add to Cart</button>
+                            <button class="wish-btn" onclick="addToWishlist('Beaded Phone Charm', 50, 'Pastel beaded wrist strap — secure & cute!', 'Beaded Phone Charm.jpg')" style="background: #ff4d6d; color: #fff; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">❤️ Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-row">
+                    <img src="Couple Bracelet Set.jpg" alt="Couple Bracelet Set" class="card-img">
+                    <div class="card-body">
+                        <h3>Couple Bracelet Set 💞</h3>
+                        <p>Matching beaded bracelets — 2 pieces included!</p>
+                        <p class="price">₱85.00</p>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="add-btn" onclick="addToCart('Couple Bracelet Set', 85, 'Couple Bracelet Set.jpg')">🛒 Add to Cart</button>
+                            <button class="wish-btn" onclick="addToWishlist('Couple Bracelet Set', 85, 'Matching beaded bracelets — 2 pieces included!', 'Couple Bracelet Set.jpg')" style="background: #ff4d6d; color: #fff; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">❤️ Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-row">
+                    <img src="Pearl Beaded Bracelet.jpg" alt="Pearl Beaded Bracelet" class="card-img">
+                    <div class="card-body">
+                        <h3>Pearl Beaded Bracelet 🦢</h3>
+                        <p>Elegant white pearls — perfect for any occasion!</p>
+                        <p class="price">₱60.00</p>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="add-btn" onclick="addToCart('Pearl Beaded Bracelet', 60, 'Pearl Beaded Bracelet.jpg')">🛒 Add to Cart</button>
+                            <button class="wish-btn" onclick="addToWishlist('Pearl Beaded Bracelet', 60, 'Elegant white pearls — perfect for any occasion!', 'Pearl Beaded Bracelet.jpg')" style="background: #ff4d6d; color: #fff; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">❤️ Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="categories" class="content-section">
+            <h1>Shop by Category 🫶</h1>
+            <p>Find your perfect beaded accessory!</p>
+            
+            <div class="category-card">
+                <div class="card-row">
+                    <img src="Bracelets flower.jpg" alt="Bracelets" class="card-img">
+                    <div class="card-body">
+                        <h3>📿 Bracelets</h3>
+                        <p>Flower, minimalist, couple sets — starting at ₱35!</p>
+                        <span class="badge badge-green">12 Items</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="card-row">
+                    <img src="Keychains.jpg" alt="Keychains" class="card-img">
+                    <div class="card-body">
+                        <h3>🔑 Keychains</h3>
+                        <p>Custom names, hearts, charms — starting at ₱45!</p>
+                        <span class="badge badge-green">8 Items</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="card-row">
+                    <img src="Phone Charms.jpg" alt="Phone Charms" class="card-img">
+                    <div class="card-body">
+                        <h3>📱 Phone Charms</h3>
+                        <p>Beaded wrist straps & lanyards — starting at ₱40!</p>
+                        <span class="badge badge-green">6 Items</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="card-row">
+                    <img src="Gift Sets.jpg" alt="Gift Sets" class="card-img">
+                    <div class="card-body">
+                        <h3>🎁 Gift Sets</h3>
+                        <p>Bracelet + Keychain bundles — save more! 💜</p>
+                        <span class="badge badge-yellow">🔥 Best Seller</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="content-section">
+            <h1>Your Cart 🛒</h1>
+            <p>Review your items and choose your payment method before checking out</p>
+            
+            <div id="cart-items-list">
+                <p style="padding: 10px; color: #ccc;">Walang laman ang iyong cart sa ngayon.</p>
+            </div>
+
+            <div class="total-row" id="cart-total-section" style="display: none; flex-direction: column; align-items: stretch; gap: 15px; margin-top: 20px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border: 1px solid rgba(6,235,124,0.3);">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px;">
+                    <label for="payment-method-select" style="color: #06eb7c; font-weight: bold; font-size: 1rem;">💳 Choose Payment Method:</label>
+                    <select id="payment-method-select" style="background: #111; color: #fff; border: 1px solid #06eb7c; padding: 8px 12px; border-radius: 6px; outline: none; font-size: 0.95rem; cursor: pointer;">
+                        <option value="Cash on Delivery">💵 Cash on Delivery (COD)</option>
+                        <option value="GCash / E-Wallet">📱 GCash / E-Wallet</option>
+                        <option value="Credit / Debit Card">💳 Credit / Debit Card</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 id="cart-total-display" style="color: #06eb7c; margin: 0;">Total ng Napili: ₱0.00</h3>
+                    <button class="checkout-btn" onclick="proceedToCheckout()" style="background: linear-gradient(90deg, #06eb7c, #85f3c5); color: #000; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="orders" class="content-section">
+            <h1>My Orders 📦</h1>
+            <p>Track your order history & payment details</p>
+            
+            <div id="orders-container">
+                <!-- Dynamic order receipts -->
+            </div>
+        </section>
+
+        <section id="wishlist" class="content-section">
+            <h1>My Wishlist ❤️</h1>
+            <p>Your saved items</p>
+            
+            <div id="wishlist-items-list">
+                <!-- Dynamic wishlist -->
+            </div>
+        </section>
+
+        <section id="profile" class="content-section">
+            <h1>My Profile 👤</h1>
+            <p>Manage your account details</p>
+            
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">💚</div>
+                    <div class="profile-name-wrap">
+                        <h2 id="profile-display-name">Mikai Lla</h2>
+                        <h3 class="member-since">Member Since — February 2022</h3>
+                    </div>
+                </div>
+
+                <div class="profile-info">
+                    <div class="info-row">
+                        <strong>📧 Email:</strong> <span id="profile-display-email">Mikai@gmail.com</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>🎓 Course:</strong> <span id="profile-display-course">Bachelor of Science in Information Technology</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>📚 Year Level:</strong> <span id="profile-display-year">2nd Year</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>📱 Phone:</strong> <span id="profile-display-phone">+63 910-688-3273</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>📍 Location:</strong> <span id="profile-display-location">Camiling, Tarlac</span>
+                    </div>
+                </div>
+
+                <div class="profile-buttons">
+                    <button class="btn-primary">✏️ Edit Profile</button>
+                    <button class="btn-outline">🔒 Change Password</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="settings" class="content-section">
+            <h1>Account Settings ⚙️</h1>
+            <p>Customize your preferences</p>
+            
+            <div class="settings-wrap">
+                <div class="settings-card">
+                    <h3>🔔 Notifications</h3>
+                    <div class="setting-row">
+                        <span>Email & order alerts</span>
+                        <label class="toggle-switch on">
+                            <span class="toggle-dot"></span>
+                        </label>
+                    </div>
+                    <div class="setting-row">
+                        <span>Promo updates</span>
+                        <label class="toggle-switch off">
+                            <span class="toggle-dot"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3>🎨 Appearance & Language</h3>
+                    <div class="setting-row">
+                        <label for="theme-select">Theme</label>
+                        <select id="theme-select" class="setting-select" onchange="if(this.value.includes('Dark')) toggleDarkMode();">
+                            <option>💚 Green Light</option>
+                            <option>🌙 Dark Mode</option>
+                            <option>🌸 Soft Pink</option>
+                        </select>
+                    </div>
+                    <div class="setting-row">
+                        <label for="lang-select">Language</label>
+                        <select id="lang-select" class="setting-select">
+                            <option>🇬🇧 English</option>
+                            <option>🇵🇭 Filipino</option>
+                        </select>
+                    </div>
+                    <div class="setting-row">
+                        <label for="currency-select">Currency</label>
+                        <select id="currency-select" class="setting-select">
+                            <option>🇵🇭 PHP — ₱</option>
+                            <option>🇺🇸 USD — $</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3>🔒 Security & Support</h3>
+                    <div class="setting-row link-row">
+                        <span>Change Password</span>
+                        <span class="arrow">›</span>
+                    </div>
+                    <div class="setting-row link-row">
+                        <span>Privacy Policy</span>
+                        <span class="arrow">›</span>
+                    </div>
+                    <div class="setting-row link-row">
+                        <span>Help & Contact</span>
+                        <span class="arrow">›</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="side-menu.js"></script>
+</body>
+</html>
